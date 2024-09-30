@@ -1,8 +1,18 @@
 import './navbar.css';
+import { fetcher } from '../../utils';
 
 const Navbar = ({ user, clearUserHandler}) => {
+  
+  const loginHandler = () => {
+    fetcher('/login', null, 'get');
+  };
+  
   return (
     <nav className="container">
+      <h1>NAV BAR</h1>
+      <button className="button-main" onClick={() => loginHandler()}>
+        Login
+      </button>
       <ul className="nav_links">
         {user && (
           <li>
